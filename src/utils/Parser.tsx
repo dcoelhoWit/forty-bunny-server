@@ -27,7 +27,6 @@ export function parseQuestions(input: any): Question[] {
     };
     return question;
   });
-  console.table(questionsList[0].options);
   return questionsList;
 }
 

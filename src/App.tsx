@@ -61,7 +61,7 @@ function App() {
     const database = getDatabase(firebaseAppConf);
 
     // Reference to the specific collection in the database
-    const collectionRef = ref(database, "Questions");
+    const collectionRef = ref(database, "Votes");
 
     // Function to fetch data from the database
     const fetchData = () => {
@@ -73,6 +73,7 @@ function App() {
         if (dataItem) {
           // Convert the object values into an array
           const parsedQuestions = parseVotesQuestions(dataItem);
+          console.log();
           setResults(parsedQuestions);
         }
       });
