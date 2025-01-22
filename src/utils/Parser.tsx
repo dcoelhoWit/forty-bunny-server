@@ -1,5 +1,3 @@
-import { StringMappingType } from "typescript";
-
 export interface Question {
   index: string;
   title: string;
