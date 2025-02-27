@@ -65,7 +65,7 @@ export default function QuestionPage({ question, numberOfQuestions }: IQuestionP
 
   useEffect(() => {
     if (!timeLeft) {
-      const nextPath = getNextPath(question);
+      const nextPath = getNextPath(question, numberOfQuestions);
       if (nextPath !== invalidPath) {
         navigate(nextPath);
         setTimeLeft(initialCount);
