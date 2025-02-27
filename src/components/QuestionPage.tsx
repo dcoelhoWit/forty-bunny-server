@@ -7,6 +7,7 @@ import { setActiveQuestion } from "../utils/FirebaseSetter";
 // Interfaces
 interface IQuestionPageProps {
   question: Question;
+  numberOfQuestions: number;
 }
 
 // Style
@@ -41,10 +42,10 @@ const options = (question: Question) => {
 };
 
 const invalidPath: string = "";
-function getNextPath(question: Question): string {
+function getNextPath(question: Question, numberOfQuestions: number): string {
   if (question !== undefined) {
     const index: number = Number(question.index);
-    if (index < 2) {
+    if (index < numberOfQuestions) {
       const nextIndex = index + 1
       setActiveQuestion(String(nextIndex));
       return "/" + nextIndex;
@@ -57,7 +58,7 @@ function getNextPath(question: Question): string {
 }
 
 // Component
-export default function QuestionPage({ question }: IQuestionPageProps) {
+export default function QuestionPage({ question, numberOfQuestions }: IQuestionPageProps) {
   const navigate = useNavigate();
   const initialCount = 15;
   const [timeLeft, setTimeLeft] = useState<number>(initialCount);

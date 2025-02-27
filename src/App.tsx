@@ -89,7 +89,7 @@ function App() {
             {questions.map((question) => (
               <Route
                 path={getPath(question.index)}
-                element={<QuestionPage question={question}></QuestionPage>}
+                element={<QuestionPage question={question} numberOfQuestions={questions.length}></QuestionPage>}
               ></Route>
             ))}
           </Routes>
