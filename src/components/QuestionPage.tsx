@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { setActiveQuestion } from "../utils/FirebaseSetter";
 
 // Interfaces
-interface QuestionPageProps {
+interface IQuestionPageProps {
   question: Question;
 }
 
@@ -57,7 +57,7 @@ function getNextPath(question: Question): string {
 }
 
 // Component
-export default function QuestionPage({ question }: QuestionPageProps) {
+export default function QuestionPage({ question }: IQuestionPageProps) {
   const navigate = useNavigate();
   const initialCount = 15;
   const [timeLeft, setTimeLeft] = useState<number>(initialCount);

@@ -60,7 +60,6 @@ function App() {
         const dataItem = snapshot.val();
         if (dataItem) {
           const parsedQuestions = parseVotesQuestions(dataItem);
-          console.log();
           setResults(parsedQuestions);
         }
       });
@@ -78,7 +77,7 @@ function App() {
       <Container>
         <Router>
           <Routes>
-            <Route path="/" element={<StartPage></StartPage>}></Route>
+            <Route path="/" element={<StartPage results={results}></StartPage>}></Route>
             <Route
               path="/results"
               element={<ShowResultsPage></ShowResultsPage>}

@@ -8,6 +8,8 @@ import {
   Legend
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 ChartJS.register(
   BarElement,
@@ -21,6 +23,10 @@ ChartJS.register(
 interface ResultsChartProps {
   dataSource: number[];
 }
+
+// Style
+const Button = styled.button.attrs({ className: "startButton"})`
+`;
 
 export default function ResultsChart({ dataSource }: ResultsChartProps) {
   const data = {
@@ -43,9 +49,15 @@ export default function ResultsChart({ dataSource }: ResultsChartProps) {
     },
   };
 
+  const navigate = useNavigate();
+  function goToStart() {
+    navigate("/");
+  }
+
   return (
     <div>
       <Bar data={data} options={options}></Bar>
+      <Button onClick={goToStart}>VOLTAR AO INÍCIO</Button>
     </div>
   );
 }
