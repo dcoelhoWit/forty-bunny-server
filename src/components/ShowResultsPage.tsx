@@ -23,8 +23,8 @@ export default function ShowResultsPage() {
 
   return (
     <Container>
-      <h1>THE QUIZ IS NOW COMPLETE!</h1>
-      <Button onClick={showResults}>SHOW RESULTS</Button>
+      <h1>QUIZ COMPLETO!</h1>
+      <Button onClick={showResults}>MOSTRAR RESULTADOS</Button>
     </Container>
   );
 }
